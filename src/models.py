@@ -14,8 +14,7 @@ class TV:
 
 class Movie(TV):
     """
-    Exercício 4: Especialização para Filmes.
-    Adiciona: rating (nota).
+    Exercício 4:
     """
     def __init__(self, title, year, rating):
         super().__init__(title, year) # Chama o construtor da classe TV
@@ -28,8 +27,7 @@ class Movie(TV):
 
 class Series(TV):
     """
-    Exercício 4: Especialização para Séries.
-    Adiciona: seasons (temporadas) e episodes (episódios totais).
+    Exercício 4: 
     """
     def __init__(self, title, year, seasons, episodes):
         super().__init__(title, year)
