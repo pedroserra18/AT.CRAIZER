@@ -168,7 +168,7 @@ def exercicio_10_resumo(summary_table: pd.DataFrame):
     print("Contagem de filmes (últimos 5 anos):")
     print(summary_table.tail(5))
 
-# --- FUNÇÃO PRINCIPAL (ORQUESTRADOR) ---
+# FUNÇÃO PRINCIPAL 
 
 def main():
     print("INICIANDO ASSESSMENT (MODO PROFISSIONAL)")
@@ -176,7 +176,7 @@ def main():
     # Configuração Inicial
     config = load_config()
     
-    # --- FLUXO DE EXECUÇÃO (PIPELINE) ---
+    # FLUXO DE EXECUÇÃO 
     try:
         # Ex 1: Coleta
         raw_data = exercicio_1_scraping(config)
@@ -213,7 +213,7 @@ def main():
     except KeyboardInterrupt:
         print("\nOperação interrompida pelo usuário.")
     except Exception as e:
-        # Importante: Imprime o erro completo para debug
+
         import traceback
         traceback.print_exc()
     finally:
