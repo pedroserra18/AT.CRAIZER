@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 def get_imdb_data(config):
     """
     Acessa o Top 250 do IMDb e retorna uma lista de dicionários.
-    Força o idioma Português (pt-BR).
     """
    
     url = "https://www.imdb.com/pt/chart/top/"
