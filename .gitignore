@@ -11,5 +11,3 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Banco de dados (Opcional: descomente se NÃO quiser enviar o banco)
-# data/imdb.db
