@@ -1,0 +1,15 @@
+# Ambiente Virtual
+venv/
+env/
+.env
+
+# Arquivos temporários do Python (lixo)
+__pycache__/
+*.py[cod]
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Banco de dados (Opcional: descomente se NÃO quiser enviar o banco)
+# data/imdb.db
