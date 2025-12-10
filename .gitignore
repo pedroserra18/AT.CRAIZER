@@ -3,7 +3,7 @@ venv/
 env/
 .env
 
-# Arquivos temporários do Python (lixo)
+# Arquivos temporários do Python 
 __pycache__/
 *.py[cod]
 
