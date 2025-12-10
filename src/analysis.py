@@ -3,8 +3,7 @@ import pandas as pd
 
 def load_dataframes(engine):
     """
-    EXERCÍCIO 7: Carrega as tabelas do banco para DataFrames.
-    Retorna: (df_movies, df_series)
+    EXERCÍCIO 7: 
     """
     print("--> Lendo dados do banco de dados...")
     try:
@@ -23,7 +22,6 @@ def load_dataframes(engine):
 def classify_rating(rating):
     """
     Função auxiliar para o EXERCÍCIO 9.
-    Classifica o filme com base na nota.
     """
     if rating >= 9.0:
         return "Obra-prima"
@@ -38,11 +36,7 @@ def classify_rating(rating):
 
 def analyze_and_export(df_movies, df_series):
     """
-    EXERCÍCIO 8: Análise e Exportação.
-    1. Ordena por nota (maior para menor).
-    2. Filtra notas > 9.0.
-    3. Exporta tudo para CSV e JSON.
-    Retorna: O DataFrame filtrado (para ser exibido no main).
+    EXERCÍCIO 8:
     """
     print("--> Iniciando análise e exportação...")
 
@@ -79,9 +73,6 @@ def analyze_and_export(df_movies, df_series):
 def generate_summary(df_movies):
     """
     EXERCÍCIO 9 e 10:
-    - Aplica classificação textual (apply).
-    - Gera tabela dinâmica (pivot_table).
-    Retorna: (summary_table, df_movies_classificado)
     """
     if df_movies.empty:
         return pd.DataFrame(), pd.DataFrame()
