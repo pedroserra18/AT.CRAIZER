@@ -8,7 +8,6 @@ def load_dataframes(engine):
     """
     print("--> Lendo dados do banco de dados...")
     try:
-        # Usamos read_sql_table para ler a tabela inteira do SQLAlchemy
         df_movies = pd.read_sql_table('movies', engine)
         df_series = pd.read_sql_table('series', engine)
         
@@ -55,7 +54,6 @@ def analyze_and_export(df_movies, df_series):
     df_sorted = df_movies.sort_values(by='rating', ascending=False)
 
     # 2. Filtrar apenas os filmes com nota maior que 9.0
-    # Importante: O exercício pede > 9.0 (estritamente maior), não >= 9.0
     df_filtered = df_sorted[df_sorted['rating'] > 9.0].copy()
 
     # 3. Exportação com try-except
@@ -93,13 +91,13 @@ def generate_summary(df_movies):
     df_movies['categoria'] = df_movies['rating'].apply(classify_rating)
 
     # --- EXERCÍCIO 10: Tabela Resumo (Pivot/Group) ---
-    # Vamos contar quantos filmes de cada categoria existem por ano
     summary = df_movies.pivot_table(
-        index='year',           # Linhas: Anos
-        columns='categoria',    # Colunas: As categorias criadas acima
-        values='title',         # O que vamos contar: Títulos
-        aggfunc='count',        # Função: Contagem
-        fill_value=0            # Se não tiver filme, preenche com 0
+        index='year',           
+        columns='categoria',   
+        values='title',       
+        aggfunc='count',       
+        fill_value=0            
     )
 
     return summary, df_movies
+    
