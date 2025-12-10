@@ -2,7 +2,7 @@
 from sqlalchemy import create_engine, Column, Integer, String, Float
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.exc import IntegrityError
-from src.models import Movie, Series # Importamos as classes lógicas para checar o tipo
+from src.models import Movie, Series
 
 # Base do SQLAlchemy para criar as tabelas
 Base = declarative_base()
@@ -12,7 +12,7 @@ class MovieDB(Base):
     __tablename__ = 'movies'
     
     id = Column(Integer, primary_key=True)
-    title = Column(String, unique=True)  # unique=True é essencial para gerar erro em duplicatas
+    title = Column(String, unique=True)  
     year = Column(Integer)
     rating = Column(Float)
 
@@ -73,7 +73,7 @@ def save_catalog_to_db(engine, catalog):
                 # Se der erro de integridade (duplicata), faz rollback e segue o baile
                 session.rollback()
                 duplicados += 1
-                # print(f"Item já existe no banco: {item.title}") # Descomente se quiser ver linha a linha
+        
 
     session.close()
     print(f"Processo finalizado. Novos inseridos: {novos} | Duplicados ignorados: {duplicados}")
